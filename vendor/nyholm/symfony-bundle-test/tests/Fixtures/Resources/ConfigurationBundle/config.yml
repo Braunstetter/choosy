@@ -1,3 +1,0 @@
-configuration:
-    foo: val1
-    bar: [val2, val3]
