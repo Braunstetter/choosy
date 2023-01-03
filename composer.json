@@ -1,0 +1,28 @@
+{
+  "name": "braunstetter/choosy-type",
+  "description": "The FormType for the @michael-brauner/choosy choice-picker.",
+  "type": "symfony-bundle",
+  "keywords": ["form", "ChoosyJs", "choice-picker"],
+  "license": "MIT",
+  "require": {
+    "php": "^8.0",
+    "symfony/framework-bundle": "^4.4|^5.0|^6.0",
+    "symfony/form": "^6",
+    "symfony/doctrine-bridge": "^6.2"
+  },
+  "require-dev": {
+    "symfony/test-pack": "^1.0",
+    "matthiasnoback/symfony-dependency-injection-test": "^4.2",
+    "nyholm/symfony-bundle-test": "1.8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Braunstetter\\Choosy\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Braunstetter\\Choosy\\\\Tests\\": "tests"
+    }
+  }
+}
