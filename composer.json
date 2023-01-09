@@ -8,9 +8,10 @@
     "php": "^8.0",
     "symfony/framework-bundle": "^4.4|^5.0|^6.0",
     "symfony/form": "^6",
-    "symfony/doctrine-bridge": "^6.2",
-    "symfony/twig-bundle": "^6.2",
-    "symfony/debug-bundle": "^6.2"
+    "symfony/doctrine-bridge": "^6.0",
+    "symfony/twig-bundle": "^6.0",
+    "symfony/debug-bundle": "^6.0",
+    "symfony/asset": "^6.0"
   },
   "require-dev": {
     "symfony/test-pack": "^1.0",

@@ -5,14 +5,16 @@ namespace Braunstetter\Choosy\Form;
 use Braunstetter\Choosy\Option;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ChoosyType extends AbstractType
 {
 
-    public array $options;
+    const CONTROLLER_NAME = 'braunstetter--choosy-type--choosy';
 
+    public array $options;
 
     public function __construct()
     {
@@ -24,20 +26,19 @@ class ChoosyType extends AbstractType
         parent::configureOptions($resolver);
 
         $resolver->setNormalizer('row_attr', function (Options $options, $values) {
-            $values['data-choosy-options-value'] = json_encode(Option::build($options));
-            $values['data-controller'] = 'choosy';
+            $values['data-' . self::CONTROLLER_NAME . '-options-value'] = json_encode(Option::build($options));
+            $values['data-controller'] = self::CONTROLLER_NAME;
             return $values;
         });
 
         $this->defineOptions($resolver);
         $this->setAllowedTypes($resolver);
         $this->setDefaults($resolver);
-
     }
 
     public function getParent(): string
     {
-        return EntityType::class;
+        return ChoiceType::class;
     }
 
     protected function formatOption($name, $type, $default): array

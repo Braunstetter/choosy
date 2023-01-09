@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* page_index.html.twig */
+/* index.html.twig */
 class __TwigTemplate_76a493d83da07a2c77fa1d8c737d3c3c extends Template
 {
     private $source;
@@ -34,8 +34,10 @@ class __TwigTemplate_76a493d83da07a2c77fa1d8c737d3c3c extends Template
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "page_index.html.twig"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "index.html.twig"));
 
+        // line 1
+        echo "kjlkjlk";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -43,16 +45,16 @@ class __TwigTemplate_76a493d83da07a2c77fa1d8c737d3c3c extends Template
 
     public function getTemplateName()
     {
-        return "page_index.html.twig";
+        return "index.html.twig";
     }
 
     public function getDebugInfo()
     {
-        return array ();
+        return array (  40 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "page_index.html.twig", "/home/michael/Projects/Bundles/Symfony/choosy/tests/app/templates/page_index.html.twig");
+        return new Source("kjlkjlk", "index.html.twig", "/home/michael/Projects/Bundles/Symfony/choosy/tests/app/templates/index.html.twig");
     }
 }
