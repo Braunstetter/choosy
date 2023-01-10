@@ -1,5 +1,5 @@
 import {Controller} from "@hotwired/stimulus"
-import {Choosy} from "@michael-brauner/choosy/src/choosy";
+import Choosy from "@michael-brauner/choosy";
 
 export default class extends Controller {
 

@@ -24,7 +24,7 @@
   "devDependencies": {
     "@symfony/webpack-encore": "^1.5.0",
     "@hotwired/stimulus": "^3.0.0",
-    "@michael-brauner/choosy": "^1.0.0"
+    "@michael-brauner/choosy": "^1.1"
   },
   "peerDependencies": {
     "@hotwired/stimulus": "^3.0.0"
