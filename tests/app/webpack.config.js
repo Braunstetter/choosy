@@ -8,6 +8,7 @@ Encore
     .setOutputPath('public/build/')
     .setPublicPath('/build')
     .addEntry('app', './assets/app.js')
+    .setManifestKeyPrefix('bundles/choosy')
     .splitEntryChunks()
     .enableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()

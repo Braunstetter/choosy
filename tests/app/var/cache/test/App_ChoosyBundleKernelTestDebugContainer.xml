@@ -12,6 +12,7 @@
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="TwigBundle">Symfony\Bundle\TwigBundle\TwigBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
+      <parameter key="ChoosyBundle">Braunstetter\Choosy\ChoosyBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -25,6 +26,10 @@
       <parameter key="DebugBundle" type="collection">
         <parameter key="path">/home/michael/Projects/Bundles/Symfony/choosy/vendor/symfony/debug-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\DebugBundle</parameter>
+      </parameter>
+      <parameter key="ChoosyBundle" type="collection">
+        <parameter key="path">/home/michael/Projects/Bundles/Symfony/choosy/src</parameter>
+        <parameter key="namespace">Braunstetter\Choosy</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -72,6 +77,7 @@
     <parameter key="data_collector.templates" type="collection"/>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
+      <parameter>@Choosy/form/choosy_theme.html.twig</parameter>
     </parameter>
     <parameter key="twig.default_path">/home/michael/Projects/Bundles/Symfony/choosy/tests/app/templates</parameter>
     <parameter key="env(VAR_DUMPER_SERVER)">127.0.0.1:9912</parameter>
@@ -1170,6 +1176,14 @@
       <call method="addPath">
         <argument>/home/michael/Projects/Bundles/Symfony/choosy/vendor/symfony/debug-bundle/Resources/views</argument>
         <argument>!Debug</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/michael/Projects/Bundles/Symfony/choosy/src/Resources/views</argument>
+        <argument>Choosy</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/michael/Projects/Bundles/Symfony/choosy/src/Resources/views</argument>
+        <argument>!Choosy</argument>
       </call>
       <call method="addPath">
         <argument>/home/michael/Projects/Bundles/Symfony/choosy/tests/app/templates</argument>

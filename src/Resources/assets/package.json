@@ -22,9 +22,9 @@
     }
   },
   "devDependencies": {
-    "@symfony/webpack-encore": "^1.5.0",
     "@hotwired/stimulus": "^3.0.0",
-    "@michael-brauner/choosy": "^1.1"
+    "@michael-brauner/choosy": "^1.1",
+    "@symfony/webpack-encore": "^1.5.0"
   },
   "peerDependencies": {
     "@hotwired/stimulus": "^3.0.0"

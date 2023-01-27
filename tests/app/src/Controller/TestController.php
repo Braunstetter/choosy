@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\VarDumper\VarDumper;
 use Twig\Environment;
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Error\LoaderError;
@@ -31,6 +32,9 @@ class TestController extends AbstractController
                 'No' => false,
             ],
         ]);
+
+//        VarDumper::dump($form->getForm()->createView());
+//        die;
 
         return new Response(
             $environment->render('index.html.twig', [
