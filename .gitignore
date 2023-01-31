@@ -1,4 +1,5 @@
 .idea/
+.phpunit.result.cache
 vendor/
 src/Resources/assets/node_modules
 tests/app/node_modules
@@ -6,3 +7,4 @@ tests/app/var
 tests/app/yarn.lock
 tests/app/yarn-error.log
 tests/app/public/build
+drivers

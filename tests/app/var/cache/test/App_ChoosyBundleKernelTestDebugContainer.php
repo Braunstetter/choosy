@@ -16,6 +16,6 @@ if (!\class_exists(App_ChoosyBundleKernelTestDebugContainer::class, false)) {
 
 return new \ContainerPtweal6\App_ChoosyBundleKernelTestDebugContainer([
     'container.build_hash' => 'Ptweal6',
-    'container.build_id' => '8cc7837c',
-    'container.build_time' => 1673549959,
+    'container.build_id' => '36a077d8',
+    'container.build_time' => 1675130302,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerPtweal6');
