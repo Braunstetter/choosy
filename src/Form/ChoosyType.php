@@ -12,6 +12,7 @@ class ChoosyType extends AbstractType
 {
 
     const CONTROLLER_NAME = 'braunstetter--choosy-type--choosy';
+    const DEFAULT_UNSET = '__unset__';
 
     public array $options;
 
@@ -24,7 +25,7 @@ class ChoosyType extends AbstractType
     {
         parent::configureOptions($resolver);
 
-        $resolver->setNormalizer('row_attr', function (Options $options, $values) {
+        $resolver->setNormalizer('row_attr', function(Options $options, $values) {
             $values['data-' . self::CONTROLLER_NAME . '-options-value'] = json_encode(Option::build($options));
             $values['data-controller'] = self::CONTROLLER_NAME;
             return $values;
@@ -40,7 +41,7 @@ class ChoosyType extends AbstractType
         return ChoiceType::class;
     }
 
-    protected function formatOption($name, $type, $default): array
+    protected function formatOption(string $name, array $type, $default = self::DEFAULT_UNSET): array
     {
         return [
             'name' => $name,
@@ -52,7 +53,9 @@ class ChoosyType extends AbstractType
     private function formatOptions()
     {
         $this->options = [
-            $this->formatOption('choosy_enabled', ['boolean'], true)
+            $this->formatOption('choosy_enabled', ['boolean'], true),
+            $this->formatOption('choosy_limit', ['int']),
+            $this->formatOption('choosy_open_on_focus', ['boolean']),
         ];
     }
 
@@ -74,7 +77,9 @@ class ChoosyType extends AbstractType
     {
         $defaults = [];
         foreach ($this->options as $option) {
-            $defaults[$option['name']] = $option['default'];
+            if ($option['default'] !== self::DEFAULT_UNSET) {
+                $defaults[$option['name']] = $option['default'];
+            }
         }
 
         $resolver->setDefaults($defaults);

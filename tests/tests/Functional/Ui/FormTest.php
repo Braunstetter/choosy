@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Functional\Ui;
+namespace Braunstetter\Choosy\Tests\Functional\Ui;
 
 use Braunstetter\Choosy\Tests\Functional\AbstractFunctionalTestCase;
 
