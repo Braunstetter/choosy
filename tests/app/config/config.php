@@ -3,6 +3,9 @@
 declare(strict_types=1);
 
 use App\Controller\TestController;
+use Symfony\Bridge\Doctrine\Form\Type\DoctrineType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Bridge\Doctrine\ManagerRegistry;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use function Symfony\Component\DependencyInjection\Loader\Configurator\service;
 

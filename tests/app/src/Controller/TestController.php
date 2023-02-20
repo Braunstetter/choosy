@@ -2,26 +2,18 @@
 
 namespace App\Controller;
 
+use Braunstetter\Choosy\Form\ChoosyEntityType;
 use Braunstetter\Choosy\Form\ChoosyType;
+use stdClass;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\FormFactoryInterface;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\VarDumper\VarDumper;
 use Twig\Environment;
 use Symfony\Component\HttpFoundation\Response;
-use Twig\Error\LoaderError;
-use Twig\Error\RuntimeError;
-use Twig\Error\SyntaxError;
 
 class TestController extends AbstractController
 {
-    /**
-     * @throws SyntaxError
-     * @throws RuntimeError
-     * @throws LoaderError
-     */
-    public function test(Environment $environment, FormFactoryInterface $formFactory, Request $request): Response
+
+    public function test(Environment $environment, FormFactoryInterface $formFactory): Response
     {
         $form = $formFactory->createBuilder();
 
@@ -33,8 +25,23 @@ class TestController extends AbstractController
             ],
         ]);
 
-//        VarDumper::dump($form->getForm()->createView());
-//        die;
+        return new Response(
+            $environment->render('index.html.twig', [
+                'form' => $form->getForm()->createView()
+            ])
+        );
+    }
+
+    public function testEntityForm(Environment $environment, FormFactoryInterface $formFactory): Response
+    {
+        $form = $formFactory->createBuilder();
+
+        $form->add('choices', ChoosyEntityType::class, [
+            'choices'  => [
+                new StdClass(),
+                new StdClass(),
+            ],
+        ]);
 
         return new Response(
             $environment->render('index.html.twig', [

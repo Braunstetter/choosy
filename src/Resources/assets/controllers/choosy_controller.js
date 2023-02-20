@@ -13,6 +13,7 @@ export default class extends Controller {
 
     connect() {
 
+        console.log('hey')
         this.choosy = this.element.querySelector('select')
 
         if (this.choosy.__x) {
