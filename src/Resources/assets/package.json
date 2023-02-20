@@ -13,7 +13,7 @@
   },
   "symfony": {
     "controllers": {
-      "collection": {
+      "choosy": {
         "main": "controllers/choosy_controller.js",
         "webpackMode": "eager",
         "fetch": "eager",
