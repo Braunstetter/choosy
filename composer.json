@@ -2,7 +2,7 @@
   "name": "braunstetter/choosy-type",
   "description": "The FormType for the @michael-brauner/choosy choice-picker.",
   "type": "symfony-bundle",
-  "keywords": ["form", "ChoosyJs", "choice-picker"],
+  "keywords": ["form", "ChoosyJs", "choice-picker", "symfony-ux"],
   "license": "MIT",
   "require": {
     "php": "^8.0",
