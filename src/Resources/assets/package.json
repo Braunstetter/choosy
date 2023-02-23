@@ -17,7 +17,10 @@
         "main": "controllers/choosy_controller.js",
         "webpackMode": "eager",
         "fetch": "eager",
-        "enabled": true
+        "enabled": true,
+        "autoimport": {
+          "@michael-brauner/choosy/dist/choosy.min.css": true
+        }
       }
     }
   },

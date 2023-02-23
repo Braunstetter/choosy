@@ -5,6 +5,8 @@ namespace Braunstetter\Choosy\Form;
 use Braunstetter\Choosy\Option;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\FormInterface;
+use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ChoosyType extends AbstractType
@@ -26,7 +28,21 @@ class ChoosyType extends AbstractType
         $this->defineOptions($resolver);
         $this->setAllowedTypes($resolver);
         $this->setDefaults($resolver);
+
+        $resolver->define('include_css')
+            ->default(false)
+            ->allowedTypes('bool')
+            ->info('Determines whether the supplied css should be injected.');
     }
+
+    public function finishView(FormView $view, FormInterface $form, array $options)
+    {
+        $view->vars = array_replace($view->vars, [
+            'include_css' => $options['include_css']
+        ]);
+    }
+
+
     private function defineOptions(OptionsResolver $optionsResolver): void
     {
         foreach ($this->options as $option) {

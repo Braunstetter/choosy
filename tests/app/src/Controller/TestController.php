@@ -32,21 +32,4 @@ class TestController extends AbstractController
         );
     }
 
-    public function testEntityForm(Environment $environment, FormFactoryInterface $formFactory): Response
-    {
-        $form = $formFactory->createBuilder();
-
-        $form->add('choices', ChoosyEntityType::class, [
-            'choices'  => [
-                new StdClass(),
-                new StdClass(),
-            ],
-        ]);
-
-        return new Response(
-            $environment->render('index.html.twig', [
-                'form' => $form->getForm()->createView()
-            ])
-        );
-    }
 }

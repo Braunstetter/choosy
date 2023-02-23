@@ -2,9 +2,9 @@
 
     {% trans_default_domain 'media' %}
 
-{#    {% if include_css %}#}
-{#        <link rel="stylesheet" type="text/css" href="{{ asset('/bundles/choosy/build/bundle.css' ) }}"/>#}
-{#    {% endif %}#}
+    {% if include_css %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('/bundles/choosy/build/bundle.css' ) }}"/>
+    {% endif %}
 
      {% if expanded %}
         {{- block('choice_widget_expanded') -}}

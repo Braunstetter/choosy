@@ -1,7 +1,3 @@
 test:
   path: /test
   controller: App\Controller\TestController::test
-
-test_entity_form:
-  path: /test_entity
-  controller: App\Controller\TestController::testEntityForm
