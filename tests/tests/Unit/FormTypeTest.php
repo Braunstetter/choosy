@@ -1,6 +1,6 @@
 <?php
 
-namespace Braunstetter\Choosy\Tests\Functional\Unit;
+namespace Braunstetter\Choosy\Tests\Unit;
 
 use Braunstetter\Choosy\Form\ChoosyType;
 use Symfony\Component\Form\FormView;
