@@ -2,9 +2,7 @@
 
 namespace App\Controller;
 
-use Braunstetter\Choosy\Form\ChoosyEntityType;
 use Braunstetter\Choosy\Form\ChoosyType;
-use stdClass;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormFactoryInterface;
 use Twig\Environment;

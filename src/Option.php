@@ -23,10 +23,6 @@ class Option
             $config['textInput']['limit'] = $options['choosy_limit'];
         }
 
-        if ($options->offsetExists('choosy_open_on_focus')) {
-            $config['resultList']['openOnFocus'] = $options['choosy_open_on_focus'];
-        }
-
         return $config;
     }
 
@@ -35,7 +31,6 @@ class Option
         return [
             self::formatOption('choosy_enabled', ['boolean'], true),
             self::formatOption('choosy_limit', ['int']),
-            self::formatOption('choosy_open_on_focus', ['boolean']),
         ];
     }
 

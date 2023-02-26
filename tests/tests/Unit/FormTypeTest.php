@@ -39,15 +39,6 @@ class FormTypeTest extends TypeTestCase
         $this->assertSame('{"enabled":true,"textInput":{"limit":2}}', $rowAttributes['data-braunstetter--choosy-type--choosy-options-value']);
     }
 
-    public function testDisabledOpenOnFocusFormView()
-    {
-        $vars = $this->getFormView(self::FORM_DISABLED_OPEN_ON_FOCUS)->children['choices']->vars;
-        $rowAttributes = $vars['row_attr'];
-
-        $this->assertArrayHasKey('data-braunstetter--choosy-type--choosy-options-value', $rowAttributes);
-        $this->assertSame('{"enabled":true,"resultList":{"openOnFocus":false}}', $rowAttributes['data-braunstetter--choosy-type--choosy-options-value']);
-    }
-
     public function getFormView(?string $formViewType = self::FORM_DEFAULT): FormView
     {
         $form = $this->factory->createBuilder();
@@ -61,10 +52,6 @@ class FormTypeTest extends TypeTestCase
 
         if (self::FORM_LIMITED === $formViewType) {
             return array_replace($this->getDefaultOptions(), ['choosy_limit' => 2]);
-        }
-
-        if (self::FORM_DISABLED_OPEN_ON_FOCUS === $formViewType) {
-            return array_replace($this->getDefaultOptions(), ['choosy_open_on_focus' => false]);
         }
 
         return $this->getDefaultOptions();
