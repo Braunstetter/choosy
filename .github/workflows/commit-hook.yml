@@ -11,6 +11,7 @@ permissions:
 
 jobs:
   symfony-tests:
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os:
